@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-deep: #050505;
+    --bg-navy: #080D1B;
+    --electric-blue: #176BFF;
+    --neon-purple: #8B5CF6;
+    --cyan-glow: #00D9FF;
+  }
+
+  body {
+    background-color: #050505;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-tech {
+    font-family: 'Space Grotesk', 'Chakra Petch', sans-serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-cyber {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+}
+
+/* Custom futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #176BFF 0%, #8B5CF6 100%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00D9FF;
+}
+
+/* Glassmorphism and holographic styling */
+.glass-panel {
+  background: rgba(8, 13, 27, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(23, 107, 255, 0.2);
+}
+
+.glass-panel-glow {
+  background: rgba(8, 13, 27, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  box-shadow: 0 0 30px -10px rgba(23, 107, 255, 0.25), inset 0 0 20px -10px rgba(0, 217, 255, 0.15);
+}
+
+.glass-panel-purple {
+  background: rgba(14, 11, 30, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 30px -10px rgba(139, 92, 246, 0.25);
+}
+
+.neon-border-glow {
+  position: relative;
+}
+.neon-border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(23, 107, 255, 0.8), rgba(139, 92, 246, 0.8), rgba(0, 217, 255, 0.8));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cyber-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(23, 107, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 107, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cyber-dots-bg {
+  background-image: radial-gradient(rgba(0, 217, 255, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Scanline overlay for subtle holographic depth */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
